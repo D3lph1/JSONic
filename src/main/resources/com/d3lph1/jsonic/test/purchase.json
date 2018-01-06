@@ -1,0 +1,26 @@
+{
+  "code": 1,
+  "status": "wait",
+  "is_completed": true,
+  "users_list": [
+    {
+      "id": 1,
+      "username": "D3lph1",
+      "password": "123456",
+      "balance": 100.5,
+      "roles": [
+        "USER",
+        "ADMIN"
+      ]
+    },
+    {
+      "id": 2,
+      "username": "example",
+      "password": "qwerty",
+      "balance": 4,
+      "roles": [
+        "USER"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <groupId>com.github.d3lph1</groupId>
+    <artifactId>jsonic</artifactId>
+    <version>1.0.0</version>
+
+    <name>com.github.d3lph1:JSONic</name>
+    <description>JSON in Java is convenient!</description>
+    <url>https://github.com/D3lph1/jsonic</url>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+    <organization>
+        <name>GitHub community</name>
+        <url>https://github.com</url>
+    </organization>
+    <developers>
+        <developer>
+            <id>D3lph1</id>
+            <name>Chertkov Bogdan</name>
+            <email>d3lph1.contanct@gmail.com</email>
+            <url>https://github.com/D3lph1</url>
+            <organization>GitHub community</organization>
+            <organizationUrl>https://github.com</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>Russia/Moscow</timezone>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/D3lph1/jsonic.git</connection>
+        <developerConnection>scm:git:https://github.com/D3lph1/jsonic.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/D3lph1/jsonic</url>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
