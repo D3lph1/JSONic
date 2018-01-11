@@ -1,31 +1,35 @@
 package com.github.d3lph1.jsonic.lexing.readers;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
- * Performs a one-character read from the stream.
+ * Performs a one-character read from the reader.
  *
  * @author D3lph1
  */
 public class StreamReader implements Reader
 {
     /**
-     * The stream from which the reading occurs.
+     * The reader from which the reading occurs.
      */
-    private InputStream stream;
+    private BufferedReader reader;
 
     /**
-     * @param stream {@link #stream}
+     * @param stream {@link #reader}
      */
-    public StreamReader(InputStream stream)
+    public StreamReader(InputStream stream) throws UnsupportedEncodingException
     {
-        this.stream = stream;
+        this.reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
+    }
+
+    public StreamReader(BufferedReader reader)
+    {
+        this.reader = reader;
     }
 
     @Override
     public char read() throws IOException
     {
-        return (char) stream.read();
+        return (char) reader.read();
     }
 }

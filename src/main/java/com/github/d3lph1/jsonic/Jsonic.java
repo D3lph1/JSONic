@@ -10,7 +10,10 @@ import com.github.d3lph1.jsonic.naming.UnderCaseNamingStrategy;
 import com.github.d3lph1.jsonic.parsing.Parser;
 import com.github.d3lph1.jsonic.typing.TypeConverter;
 
+import java.io.BufferedReader;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 
 /**
  * Class-wrapper for JSONic functionality.
@@ -55,7 +58,19 @@ public final class Jsonic
 
     public <T> T fromJson(InputStream stream, Class<T> template)
     {
-        Parser parser = createParser(new StreamReader(stream));
+        Parser parser;
+        try {
+            parser = createParser(new StreamReader(stream));
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
+
+        return convert(parser.parse(), template);
+    }
+
+    public <T> T fromJson(BufferedReader reader, Class<T> template)
+    {
+        Parser parser = createParser(new StreamReader(reader));
 
         return convert(parser.parse(), template);
     }
@@ -76,7 +91,19 @@ public final class Jsonic
 
     public JsonElement fromJson(InputStream stream)
     {
-        Parser parser = createParser(new StreamReader(stream));
+        Parser parser;
+        try {
+            parser = createParser(new StreamReader(stream));
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
+
+        return parser.parse();
+    }
+
+    public JsonElement fromJson(BufferedReader reader)
+    {
+        Parser parser = createParser(new StreamReader(reader));
 
         return parser.parse();
     }
